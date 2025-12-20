@@ -1,0 +1,62 @@
++---------+                         +------------------+                         +------------------+
+|         |                         |                  |                         |                  |
+|  User   |                         |   Client App     |                         |  Auth Server     |
+| Browser |                         |  (Your App)      |                         | (OAuth Provider) |
+|         |                         |                  |                         |                  |
++----+----+                         +---------+--------+                         +---------+--------+
+     |                                              |                                            |
+     | 1. Access protected resource                 |                                            |
+     |--------------------------------------------->|                                            |
+     |                                              |                                            |
+     | 2. Generate PKCE                             |                                            |
+     |    - code_verifier                           |                                            |
+     |    - code_challenge = HASH(verifier)         |                                            |
+     |                                              |                                            |
+     | 3. Redirect user to /authorize               |                                            |
+     |---------------------------------------------->                                            |
+     |   response_type=code                         |                                            |
+     |   client_id                                  |                                            |
+     |   redirect_uri                               |                                            |
+     |   code_challenge                             |                                            |
+     |   code_challenge_method=S256                 |                                            |
+     |                                              |                                            |
+     |                                      4. User authenticates & consents                      |
+     |                                      <---------------------------------------------->      |
+     |                                              |                                            |
+     | 5. Redirect back with authorization code     |                                            |
+     |<----------------------------------------------                                            |
+     |   redirect_uri?code=AUTH_CODE                |                                            |
+     |                                              |                                            |
+     | 6. Exchange code for tokens                  |                                            |
+     |---------------------------------------------->                                            |
+     |   POST /token                                |                                            |
+     |   - authorization_code                       |                                            |
+     |   - code_verifier                            |                                            |
+     |                                              |                                            |
+     |                                      7. Verify PKCE                                       |
+     |                                      - HASH(code_verifier) == code_challenge               |
+     |                                      - code valid & unused                                 |
+     |                                              |                                            |
+     | 8. Return tokens                             |                                            |
+     |<----------------------------------------------                                            |
+     |   access_token                               |                                            |
+     |   (optional) refresh_token                  |                                            |
+     |                                              |                                            |
+     | 9. Access protected APIs                     |                                            |
+     |---------------------------------------------->                                            |
+     |   Cookie: access_token: access_token         |                                            |
+     |                                              |                                            |
+
+
+Vulnerable endpoint
+Exploit Executed
+Impact Demonstrated
+App architecture
+Implemented vulnerabilities
+Exploit Demonstrated
+Exploit Demonstration Summary
+Lesson Learned
+Show how intentionally introduces vulnerability
+Run exploit live
+Answer questions about alternative exploitation paths
+Propose mitigation

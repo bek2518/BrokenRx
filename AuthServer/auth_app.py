@@ -194,12 +194,12 @@ def token(
         raise HTTPException(status_code=400, detail="PKCE failed")
 
     # FIX FOR CODE REUSE
-    '''
+
     # Removes the authorization code from the database once it has been retrieved preventing
     # future use and avoids the code reuse
     with DatabaseHandler() as db:
         db.remove_authorization_code(code)
-    '''
+
 
     user_id=auth_code[1]
 

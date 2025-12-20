@@ -1,0 +1,111 @@
+INFO:     Will watch for changes in these directories: ['/media/thedoc/Linux/INSA/Assignment/Advanced/Individual/BrokenRx/AuthServer']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [309394] using StatReload
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 20:39:46,817 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 20:39:46,818 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [309399]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:53688 - "GET /register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33600 - "POST /register HTTP/1.1" 302 Found
+INFO:     127.0.0.1:33602 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44786 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:44802 - "GET /authorize HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58526 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=OAddFFURZ_aUq_1TtFnuPVFn3YMBdEdVircpd08rn58&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:58534 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57370 - "GET /register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57378 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=wkO6WgkGcPGPfC4Gb9QIfXy7imQJbSENtnLF0ovod1U&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:57382 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57384 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:57398 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=wkO6WgkGcPGPfC4Gb9QIfXy7imQJbSENtnLF0ovod1U&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:57410 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53986 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=WeC1-E1Y1GASI0wUxzoQ-Ga7XnmEGRU4ikVpQko7Hbo&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:54002 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56058 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=m45KU7dKYqz1WzxaHgGHpRhzURg5LhidyDvct2peaBs&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:56058 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56058 - "POST /login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56058 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56058 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:56058 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=m45KU7dKYqz1WzxaHgGHpRhzURg5LhidyDvct2peaBs&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:34384 - "POST /token HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [309399]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 20:54:09,936 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 20:54:09,936 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [317725]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:54670 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=HdkbfWdlNmAxaz-TfI_Iqp0jWeD2HT1n6_pewWBxMGQ&code_challenge_method=S256 HTTP/1.1" 400 Bad Request
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [317725]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 20:55:52,049 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 20:55:52,049 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [318710]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:46170 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=o_IMe7_E8PwWMOPBRj9Q6XI6vAnMa6rQIiMs1rK3bo8&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:46170 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55698 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=o_IMe7_E8PwWMOPBRj9Q6XI6vAnMa6rQIiMs1rK3bo8&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:55712 - "POST /token HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:49248 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=o_IMe7_E8PwWMOPBRj9Q6XI6vAnMa6rQIiMs1rK3bo8&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:49258 - "POST /token HTTP/1.1" 400 Bad Request
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [318710]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 20:57:58,815 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 20:57:58,815 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [320009]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:48722 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=Z_vdcni4nLH8qrOS_brzw1r8sgk7CYr2MJy51F3neCI&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:48738 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43350 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "POST /token HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [320009]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 21:01:43,391 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 21:01:43,392 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [322113]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [322113]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 21:01:47,047 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 21:01:47,048 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [322173]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:52402 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:8888/callback&code_challenge=kub2KkBn1CVHrN6lnqhPtgq8pNx1xQgD9zY_GuGPHsA&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:52404 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58538 - "POST /token HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:55036 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=pIL5i_yJrjPGBkltuZCakZON9PzKBjMeWUOzjP4-oSw&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:55036 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55048 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:55048 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=pIL5i_yJrjPGBkltuZCakZON9PzKBjMeWUOzjP4-oSw&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:55054 - "POST /token HTTP/1.1" 200 OK
