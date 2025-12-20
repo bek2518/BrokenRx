@@ -149,6 +149,19 @@ def authorize(request: Request):
     code = secrets.token_urlsafe(32)
     expires_at = int(time.time()) + 600
     
+    with DatabaseHandler() as db:
+        client = db.oauth_client(client_id) 
+    # FIX FOR REDIRECT
+    '''
+    # Fix No 1: not processing the request entirely
+    if client[2] != redirect_uri:
+        raise HTTPException(status_code=400, detail="Invalid Redirect URL")
+    '''
+    
+    '''
+    # Fix No 2: Replacing the redirect_uri using the whitelist database
+    redirect_uri = client[2]
+    '''
     if not client_id:
         raise HTTPException(status_code=400, detail="Invalid client")
     request.session["oauth_request"] = {
