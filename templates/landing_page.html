@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}BrokenRx – Fast & Secure Medication Delivery{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="grid md:grid-cols-2 gap-10 items-center mt-16">
+  <div>
+    <h1 class="text-5xl font-extrabold mb-6 text-gray-800">
+      Fast, Secure & Reliable <br />
+      <span class="text-blue-600">Medication Delivery</span>
+    </h1>
+    <p class="text-gray-600 text-lg mb-8">
+      BrokenRx connects patients, doctors, and pharmacies through a secure
+      prescription workflow — ensuring medications reach patients quickly and safely.
+    </p>
+
+    <div class="flex gap-4">
+      <a
+        href="/login"
+        class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+      >
+        Login
+      </a>
+      <a
+        href="/register"
+        class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition"
+      >
+        Register
+      </a>
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <img
+      src="https://media.istockphoto.com/id/1469686707/photo/delivery-worker-hands-holding-medications-parcel.jpg?s=1024x1024&w=is&k=20&c=hI3p5kY9-R3KBH7pD_v4ZCmPAIp0PC8bZp5e-xfrp8k="
+      alt="Pharmacy delivery"
+      class="rounded-xl shadow-lg max-h-[380px]"
+    />
+  </div>
+</section>
+
+<!-- Features -->
+<section class="mt-24 grid md:grid-cols-3 gap-8">
+  <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+    <h3 class="text-xl font-semibold mb-2">📄 Secure Prescriptions</h3>
+    <p class="text-gray-600">
+      Upload prescriptions securely and track their status in real time.
+    </p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+    <h3 class="text-xl font-semibold mb-2">⚡ Fast Processing</h3>
+    <p class="text-gray-600">
+      Prescriptions are reviewed and approved quickly by certified pharmacies.
+    </p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+    <h3 class="text-xl font-semibold mb-2">🚚 Doorstep Delivery</h3>
+    <p class="text-gray-600">
+      Approved medications are dispensed and delivered directly to patients.
+    </p>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="mt-24 bg-white rounded-xl shadow p-10">
+  <h2 class="text-3xl font-bold text-center mb-10">How It Works</h2>
+
+  <div class="grid md:grid-cols-4 gap-8 text-center">
+    <div>
+      <div class="text-4xl mb-3">1️⃣</div>
+      <p class="font-semibold">Register & Login</p>
+    </div>
+    <div>
+      <div class="text-4xl mb-3">2️⃣</div>
+      <p class="font-semibold">Upload Prescription</p>
+    </div>
+    <div>
+      <div class="text-4xl mb-3">3️⃣</div>
+      <p class="font-semibold">Pharmacy Review</p>
+    </div>
+    <div>
+      <div class="text-4xl mb-3">4️⃣</div>
+      <p class="font-semibold">Medication Delivered</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="mt-24 text-center mb-16">
+  <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+  <p class="text-gray-600 mb-2">
+    Have questions or need support? We’re here to help.
+  </p>
+  <p class="text-gray-700 font-medium">
+    📧 support@brokenrx.com | 📞 +251 900 000 000
+  </p>
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="grid grid-cols-3 gap-6">
+  <!-- LEFT: Prescription List -->
+  <div class="col-span-1">
+    <h2 class="text-2xl font-semibold mb-4">Your Prescriptions</h2>
+
+    <table class="w-full bg-white shadow rounded">
+      <thead>
+        <tr class="border-b bg-gray-50">
+          <th class="p-3 text-left">Submitted</th>
+          <th class="p-3 text-left">Status</th>
+          <th class="p-3 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if prescriptions %} {% for p in prescriptions %}
+        <tr class="border-b hover:bg-gray-50">
+          <td class="p-3">{{ p.created_at }}</td>
+        <td class="p-3">
+          {% if p.status == "delivered" %}
+            <span class="px-2 py-1 rounded bg-green-200 text-green-800 text-sm">
+              Delivered
+            </span>
+          {% elif p.status == "approved" %}
+            <span class="px-2 py-1 rounded bg-blue-200 text-blue-800 text-sm">
+              Approved
+            </span>
+          {% elif p.status == "in_route" %}
+            <span class="px-2 py-1 rounded bg-red-200 text-red-800 text-sm">
+              In Route
+            </span>
+          {% elif p.status == "rejected" %}
+            <span class="px-2 py-1 rounded bg-black text-white text-sm">
+              Rejected
+            </span>
+          {% else %}
+            <span class="px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-sm">
+              {{ p.status }}
+            </span>
+          {% endif %}
+        </td>
+
+          <td class="p-3">
+            <button
+              onclick="loadPrescription({{ p.id }})"
+              class="text-blue-600 hover:underline"
+            >
+              View
+            </button>
+          </td>
+        </tr>
+        {% endfor %} {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RIGHT: Preview Panel -->
+  <div class="col-span-2">
+    <h2 class="text-2xl font-semibold mb-4">Preview</h2>
+
+    <div
+      id="preview"
+      class="bg-white shadow rounded p-4 min-h-[500px] flex items-center justify-center text-gray-500"
+    >
+      Select a prescription to view
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  async function loadPrescription(id) {
+    const preview = document.getElementById("preview");
+    preview.innerHTML = "Loading...";
+
+    const fileUrl = `http://localhost:9000/api/prescription/${id}/file`;
+
+      preview.innerHTML = `<iframe src="${fileUrl}" class="w-full h-[600px] border rounded"></iframe>`;
+  }
+</script>
+
+{% endblock %}

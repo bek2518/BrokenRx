@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}BrokenRx{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <nav class="bg-white shadow mb-6">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between">
+        <a href="/" class="text-xl font-bold">BrokenRx</a>
+        {% if user %}
+        <div class="flex gap-4 items-center">
+          {% if user.role != 'admin' %}
+          <a href="/dashboard" class="text-sm">Dashboard</a>
+          {% endif %}
+          {% if user.role == 'admin' %}
+          <a href="/admin" class="text-sm">Admin</a>
+          {% endif %}
+          {% if user.role != 'admin' %}
+          <a href="/upload" class="text-sm">Upload</a>
+          {% endif %}
+          <span class="text-sm text-gray-600">{{ user.username }}</span>
+          <a href="/logout" class="text-sm text-red-600">Logout</a>
+        </div>
+        {% endif %}
+      </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-4">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% for
+      category, msg in messages %}
+      <div
+        class="mb-4 p-3 rounded bg-{{ 'green' if category=='success' else 'red' }}-100"
+      >
+        {{ msg }}
+      </div>
+      {% endfor %} {% endwith %} {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+INFO:     Will watch for changes in these directories: ['/media/thedoc/Linux/INSA/Assignment/Advanced/Individual/BrokenRx']
+INFO:     Uvicorn running on http://127.0.0.1:9000 (Press CTRL+C to quit)
+INFO:     Started reloader process [207231] using StatReload
+INFO:     Started server process [207235]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:43966 - "GET /api/prescriptions/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54858 - "GET /api/prescriptions/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54870 - "GET /api/admin/prescriptions HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [207235]
+INFO:     Started server process [217697]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [217697]
+INFO:     Started server process [217916]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [217916]
+INFO:     Started server process [218103]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [218103]
+INFO:     Started server process [218723]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [218723]
+INFO:     Started server process [218865]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [218865]
+INFO:     Started server process [232022]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232022]
+INFO:     Started server process [232065]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232065]
+INFO:     Started server process [232154]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'AuthServer/auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232154]
+INFO:     Started server process [232374]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

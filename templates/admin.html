@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="text-2xl font-semibold mb-4">Admin Dashboard</h2>
+
+<!-- Tabs -->
+<div class="flex space-x-4 mb-6">
+  <button
+    id="tab-all"
+    onclick="showTab('all')"
+    class="px-4 py-2 rounded bg-blue-600 text-white"
+  >
+    All Prescriptions
+  </button>
+
+  <button
+    id="tab-agg"
+    onclick="showTab('agg')"
+    class="px-4 py-2 rounded bg-gray-200"
+  >
+    By User
+  </button>
+</div>
+
+<!-- ================= ALL PRESCRIPTIONS ================= -->
+<div id="tab-all-content">
+
+  <table class="w-full bg-white shadow rounded">
+    <thead>
+      <tr class="border-b bg-gray-100 text-left">
+        <th class="p-3">User</th>
+        <th class="p-3">Submitted</th>
+        <th class="p-3">Status</th>
+        <th class="p-3">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for p in prescriptions %}
+      <tr class="border-b">
+        <td class="p-3 font-medium">{{ p.username }}</td>
+
+        <td class="p-3">{{ p.created_at }}</td>
+
+        <td class="p-3">
+          {% if p.status == "delivered" %}
+            <span class="px-2 py-1 rounded bg-green-200 text-green-800 text-sm">
+              Delivered
+            </span>
+          {% elif p.status == "approved" %}
+            <span class="px-2 py-1 rounded bg-blue-200 text-blue-800 text-sm">
+              Approved
+            </span>
+          {% elif p.status == "in_route" %}
+            <span class="px-2 py-1 rounded bg-red-200 text-red-800 text-sm">
+              In Route
+            </span>
+          {% elif p.status == "rejected" %}
+            <span class="px-2 py-1 rounded bg-black text-white text-sm">
+              Rejected
+            </span>
+          {% else %}
+            <span class="px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-sm">
+              {{ p.status }}
+            </span>
+          {% endif %}
+        </td>
+
+        <td class="p-3 space-x-2">
+          <button
+            class="text-blue-600 hover:underline"
+            onclick="viewPrescription({{ p.id }})"
+          >
+            View
+          </button>
+
+          {% if p.status != "Delivered" %}
+          <select
+            class="border rounded px-2 py-1 text-sm"
+            onchange="updateStatus({{ p.id }}, this.value)"
+          >
+            <option disabled selected>Change status</option>
+            <option value="approved">Approved</option>
+            <option value="in_route">In Route</option>
+            <option value="delivered">Delivered</option>
+            <option value="rejected">Rejected</option>
+          </select>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- ================= AGGREGATED BY USER ================= -->
+<div id="tab-agg-content" class="hidden">
+
+  {% for username, count in aggregates.items() %}
+  <div class="mb-4 border rounded shadow bg-white">
+    <button
+      onclick="toggleUser('{{ username }}')"
+      class="w-full text-left px-4 py-3 bg-gray-100 font-medium"
+    >
+      {{ username }} — {{ count }} prescriptions
+    </button>
+
+    <div id="user-{{ username }}" class="hidden p-4 space-y-3">
+      {% for p in prescriptions if p.username == username %}
+      <div class="flex justify-between items-center border-b pb-2">
+        <div>
+          <div class="text-sm text-gray-600">{{ p.created_at }}</div>
+
+          {% if p.status == "delivered" %}
+            <span class="px-2 py-1 rounded bg-green-200 text-green-800 text-xs">
+              Delivered
+            </span>
+          {% elif p.status == "in_route" %}
+            <span class="px-2 py-1 rounded bg-red-200 text-red-800 text-xs">
+              In Route
+            </span>
+          {% elif p.status == "approved" %}
+            <span class="px-2 py-1 rounded bg-blue-200 text-blue-800 text-xs">
+              Approved
+            </span>
+          {% elif p.status == "rejected" %}
+            <span class="px-2 py-1 rounded bg-black text-white text-xs">
+              Rejected
+            </span>
+          {% else %}
+            <span class="px-2 py-1 rounded bg-yellow-200 text-yellow-800 text-xs">
+              {{ p.status }}
+            </span>
+          {% endif %}
+        </div>
+
+        <div class="space-x-2">
+          <button
+            class="text-blue-600 hover:underline"
+            onclick="viewPrescription({{ p.id }})"
+          >
+            View
+          </button>
+
+          {% if p.status != "Delivered" %}
+          <select
+            class="border rounded px-2 py-1 text-xs"
+            onchange="updateStatus({{ p.id }}, this.value)"
+          >
+            <option disabled selected>Status</option>
+            <option value="approved">Approved</option>
+            <option value="in_route">In Route</option>
+            <option value="delivered">Delivered</option>
+            <option value="rejected">Rejected</option>
+          </select>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- ================= PREVIEW PANEL ================= -->
+<!-- PREVIEW PANEL -->
+<div
+  id="preview-panel"
+  class="fixed top-0 right-0 w-1/3 h-full bg-white shadow-lg hidden"
+>
+  <div class="flex justify-between items-center p-4 border-b">
+    <h3 class="font-semibold">Prescription Preview</h3>
+    <button onclick="closePreview()">✕</button>
+  </div>
+
+  <iframe
+    id="preview-frame"
+    class="w-full h-full"
+    frameborder="0"
+  ></iframe>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+function showTab(tab) {
+  document.getElementById("tab-all-content").classList.add("hidden");
+  document.getElementById("tab-agg-content").classList.add("hidden");
+
+  document.getElementById("tab-all").className =
+    "px-4 py-2 rounded bg-gray-200";
+  document.getElementById("tab-agg").className =
+    "px-4 py-2 rounded bg-gray-200";
+
+  if (tab === "all") {
+    document.getElementById("tab-all-content").classList.remove("hidden");
+    document.getElementById("tab-all").className =
+      "px-4 py-2 rounded bg-blue-600 text-white";
+  } else {
+    document.getElementById("tab-agg-content").classList.remove("hidden");
+    document.getElementById("tab-agg").className =
+      "px-4 py-2 rounded bg-blue-600 text-white";
+  }
+}
+
+function toggleUser(username) {
+  const el = document.getElementById("user-" + username);
+  el.classList.toggle("hidden");
+}
+
+function viewPrescription(id) {
+  const panel = document.getElementById("preview-panel");
+  const frame = document.getElementById("preview-frame");
+
+  frame.src = `http://localhost:9000/api/prescription/${id}/file`;
+  panel.classList.remove("hidden");
+}
+
+function closePreview() {
+  document.getElementById("preview-panel").classList.add("hidden");
+  document.getElementById("preview-frame").src = "";
+}
+
+function updateStatus(id, status) {
+  fetch(`http://localhost:9000/api/admin/prescriptions/${id}/status`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ status })
+  })
+  .then(async (response) => {
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.detail || "Status update failed");
+    }
+    return response.json();
+  })
+  .then(() => {
+    location.reload();
+  })
+  .catch(err => {
+    alert(err.message);
+  });
+}
+</script>
+
+{% endblock %}

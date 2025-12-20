@@ -1,0 +1,131 @@
+INFO:     Will watch for changes in these directories: ['/media/thedoc/Linux/INSA/Assignment/Advanced/Individual/BrokenRx/AuthServer']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [207232] using StatReload
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 17:23:13,265 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 17:23:13,265 - WARNING - Rowcount after insert: 1
+2025-12-20 17:23:13,405 - WARNING - COMMIT DONE
+2025-12-20 17:23:13,406 - WARNING - Inserted row: ('BrokenRx_client', 'BrokenRx Prescription Systems', 'http://localhost:5000/callback')
+INFO:     Started server process [207237]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:35434 - "GET /register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57886 - "POST /register HTTP/1.1" 302 Found
+INFO:     127.0.0.1:57894 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57900 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:57910 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=HmN0XRmj2FfJ2v4z1lzuc4gwsVxChSVeduCZ-uKqQ9U&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:57922 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48732 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=R8gZ71wLYxadKNRso_Vm5v-DSHtJJ1k6rg_kBBHIbhM&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:48736 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48744 - "POST /login HTTP/1.1" 302 Found
+INFO:     127.0.0.1:48750 - "GET /authorize?response_type=code&client_id=BrokenRx_client&redirect_uri=http://localhost:5000/callback&code_challenge=R8gZ71wLYxadKNRso_Vm5v-DSHtJJ1k6rg_kBBHIbhM&code_challenge_method=S256 HTTP/1.1" 302 Found
+INFO:     127.0.0.1:48754 - "POST /token HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [207237]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 17:44:06,947 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 17:44:06,947 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [217698]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [217698]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 17:44:34,569 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 17:44:34,569 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [217915]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [217915]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 17:44:56,835 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 17:44:56,835 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [218104]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [218104]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 17:46:09,712 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 17:46:09,712 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [218714]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [218714]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 17:46:27,512 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 17:46:27,512 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [218864]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [218864]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 18:12:54,669 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 18:12:54,669 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [232023]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232023]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 18:12:59,176 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 18:12:59,177 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [232061]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232061]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 18:13:10,912 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 18:13:10,912 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [232155]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'auth_app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232155]
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 3
+2025-12-20 18:13:37,271 - WARNING - INIT OAUTH CLIENT CALLED
+2025-12-20 18:13:37,271 - ERROR - Failed to insert into table oauth_clients: UNIQUE constraint failed: oauth_clients.client_id
+INFO:     Started server process [232383]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
